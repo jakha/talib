@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/sumorf/talib"
+	"github.com/jakha/talib/talib"
 	"math"
 )
 
