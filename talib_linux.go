@@ -1,6 +1,6 @@
 package talib
 
-// #cgo LDFLAGS: -lta_lib
+// #cgo LDFLAGS: -lta-lib -lm
 // #include "ta-lib/ta_libc.h"
 import "C"
 
@@ -16,12 +16,12 @@ func init() {
 	}
 }
 
-/*Acos - Vector Trigonometric ACos
+/*
+Acos - Vector Trigonometric ACos
 
 Input = double
 
 Output = double
-
 */
 func Acos(real []float64) []float64 {
 	var outBegIdx C.int
@@ -31,12 +31,12 @@ func Acos(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Ad - Chaikin A/D Line
+/*
+Ad - Chaikin A/D Line
 
 Input = High, Low, Close, Volume
 
 Output = double
-
 */
 func Ad(high, low, close, volume []float64) []float64 {
 	var outBegIdx C.int
@@ -46,12 +46,12 @@ func Ad(high, low, close, volume []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Add - Vector Arithmetic Add
+/*
+Add - Vector Arithmetic Add
 
 Input = double, double
 
 Output = double
-
 */
 func Add(real0, real1 []float64) []float64 {
 	var outBegIdx C.int
@@ -61,24 +61,24 @@ func Add(real0, real1 []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*AdOsc - Chaikin A/D Oscillator
+/*
+AdOsc - Chaikin A/D Oscillator
 
 Input = High, Low, Close, Volume
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastPeriod:(From 2 to 100000)
 
-Number of period for the fast MA
+# Number of period for the fast MA
 
 optInSlowPeriod:(From 2 to 100000)
 
 Number of period for the slow MA
-
 */
 func AdOsc(high, low, close, volume []float64, fastPeriod, slowPeriod int32) []float64 {
 	var outBegIdx C.int
@@ -88,20 +88,20 @@ func AdOsc(high, low, close, volume []float64, fastPeriod, slowPeriod int32) []f
 	return outReal[:outNBElement]
 }
 
-/*Adx - Average Directional Movement Index
+/*
+Adx - Average Directional Movement Index
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Adx(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -111,20 +111,20 @@ func Adx(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Adxr - Average Directional Movement Index Rating
+/*
+Adxr - Average Directional Movement Index Rating
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Adxr(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -134,28 +134,28 @@ func Adxr(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Apo - Absolute Price Oscillator
+/*
+Apo - Absolute Price Oscillator
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastPeriod:(From 2 to 100000)
 
-Number of period for the fast MA
+# Number of period for the fast MA
 
 optInSlowPeriod:(From 2 to 100000)
 
-Number of period for the slow MA
+# Number of period for the slow MA
 
 optInMAType:
 
 Type of Moving Average
-
 */
 func Apo(real []float64, fastPeriod, slowPeriod, mAType int32) []float64 {
 	var outBegIdx C.int
@@ -165,20 +165,20 @@ func Apo(real []float64, fastPeriod, slowPeriod, mAType int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*AroOn - Aroon
+/*
+AroOn - Aroon
 
 Input = High, Low
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func AroOn(high, low []float64, timePeriod int32) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -189,20 +189,20 @@ func AroOn(high, low []float64, timePeriod int32) ([]float64, []float64) {
 	return outAroonDown[:outNBElement], outAroonUp[:outNBElement]
 }
 
-/*AroOnOsc - Aroon Oscillator
+/*
+AroOnOsc - Aroon Oscillator
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func AroOnOsc(high, low []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -212,12 +212,12 @@ func AroOnOsc(high, low []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Asin - Vector Trigonometric ASin
+/*
+Asin - Vector Trigonometric ASin
 
 Input = double
 
 Output = double
-
 */
 func Asin(real []float64) []float64 {
 	var outBegIdx C.int
@@ -227,12 +227,12 @@ func Asin(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Atan - Vector Trigonometric ATan
+/*
+Atan - Vector Trigonometric ATan
 
 Input = double
 
 Output = double
-
 */
 func Atan(real []float64) []float64 {
 	var outBegIdx C.int
@@ -242,20 +242,20 @@ func Atan(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Atr - Average True Range
+/*
+Atr - Average True Range
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Atr(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -265,12 +265,12 @@ func Atr(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*AvgPrice - Average Price
+/*
+AvgPrice - Average Price
 
 Input = Open, High, Low, Close
 
 Output = double
-
 */
 func AvgPrice(open, high, low, close []float64) []float64 {
 	var outBegIdx C.int
@@ -280,32 +280,32 @@ func AvgPrice(open, high, low, close []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*BBands - Bollinger Bands
+/*
+BBands - Bollinger Bands
 
 Input = double
 
 Output = double, double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
-Number of period
+# Number of period
 
 optInNbDevUp:(From TA_REAL_MIN to TA_REAL_MAX)
 
-Deviation multiplier for upper band
+# Deviation multiplier for upper band
 
 optInNbDevDn:(From TA_REAL_MIN to TA_REAL_MAX)
 
-Deviation multiplier for lower band
+# Deviation multiplier for lower band
 
 optInMAType:
 
 Type of Moving Average
-
 */
 func BBands(real []float64, timePeriod int32, nbDevUp, nbDevDn float64, mAType int32) ([]float64, []float64, []float64) {
 	var outBegIdx C.int
@@ -317,20 +317,20 @@ func BBands(real []float64, timePeriod int32, nbDevUp, nbDevDn float64, mAType i
 	return outRealUpperBand[:outNBElement], outRealMiddleBand[:outNBElement], outRealLowerBand[:outNBElement]
 }
 
-/*Beta - Beta
+/*
+Beta - Beta
 
 Input = double, double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Beta(real0, real1 []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -340,12 +340,12 @@ func Beta(real0, real1 []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Bop - Balance Of Power
+/*
+Bop - Balance Of Power
 
 Input = Open, High, Low, Close
 
 Output = double
-
 */
 func Bop(open, high, low, close []float64) []float64 {
 	var outBegIdx C.int
@@ -355,20 +355,20 @@ func Bop(open, high, low, close []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Cci - Commodity Channel Index
+/*
+Cci - Commodity Channel Index
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Cci(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -378,12 +378,12 @@ func Cci(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Cdl2Crows - Two Crows
+/*
+Cdl2Crows - Two Crows
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl2Crows(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -393,12 +393,12 @@ func Cdl2Crows(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3BlackCrows - Three Black Crows
+/*
+Cdl3BlackCrows - Three Black Crows
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3BlackCrows(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -408,12 +408,12 @@ func Cdl3BlackCrows(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3Inside - Three Inside Up/Down
+/*
+Cdl3Inside - Three Inside Up/Down
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3Inside(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -423,12 +423,12 @@ func Cdl3Inside(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3LineStrike - Three-Line Strike
+/*
+Cdl3LineStrike - Three-Line Strike
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3LineStrike(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -438,12 +438,12 @@ func Cdl3LineStrike(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3Outside - Three Outside Up/Down
+/*
+Cdl3Outside - Three Outside Up/Down
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3Outside(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -453,12 +453,12 @@ func Cdl3Outside(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3StarsinSouth - Three Stars In The South
+/*
+Cdl3StarsinSouth - Three Stars In The South
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3StarsinSouth(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -468,12 +468,12 @@ func Cdl3StarsinSouth(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Cdl3WhiteSoldiers - Three Advancing White Soldiers
+/*
+Cdl3WhiteSoldiers - Three Advancing White Soldiers
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func Cdl3WhiteSoldiers(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -483,20 +483,20 @@ func Cdl3WhiteSoldiers(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlAbandonedBaby - Abandoned Baby
+/*
+CdlAbandonedBaby - Abandoned Baby
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlAbandonedBaby(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -506,12 +506,12 @@ func CdlAbandonedBaby(open, high, low, close []float64, penetration float64) []i
 	return outInteger[:outNBElement]
 }
 
-/*CdlAdvanceBlock - Advance Block
+/*
+CdlAdvanceBlock - Advance Block
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlAdvanceBlock(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -521,12 +521,12 @@ func CdlAdvanceBlock(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlBelthold - Belt-hold
+/*
+CdlBelthold - Belt-hold
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlBelthold(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -536,12 +536,12 @@ func CdlBelthold(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlBreakaway - Breakaway
+/*
+CdlBreakaway - Breakaway
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlBreakaway(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -551,12 +551,12 @@ func CdlBreakaway(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlClosingMarubozu - Closing Marubozu
+/*
+CdlClosingMarubozu - Closing Marubozu
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlClosingMarubozu(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -566,12 +566,12 @@ func CdlClosingMarubozu(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlConcealBabySwall - Concealing Baby Swallow
+/*
+CdlConcealBabySwall - Concealing Baby Swallow
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlConcealBabySwall(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -581,12 +581,12 @@ func CdlConcealBabySwall(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlCounterattack - Counterattack
+/*
+CdlCounterattack - Counterattack
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlCounterattack(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -596,20 +596,20 @@ func CdlCounterattack(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlDarkCloudCover - Dark Cloud Cover
+/*
+CdlDarkCloudCover - Dark Cloud Cover
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlDarkCloudCover(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -619,12 +619,12 @@ func CdlDarkCloudCover(open, high, low, close []float64, penetration float64) []
 	return outInteger[:outNBElement]
 }
 
-/*CdlDoji - Doji
+/*
+CdlDoji - Doji
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlDoji(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -634,12 +634,12 @@ func CdlDoji(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlDojiStar - Doji Star
+/*
+CdlDojiStar - Doji Star
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlDojiStar(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -649,12 +649,12 @@ func CdlDojiStar(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlDragonflyDoji - Dragonfly Doji
+/*
+CdlDragonflyDoji - Dragonfly Doji
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlDragonflyDoji(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -664,12 +664,12 @@ func CdlDragonflyDoji(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlEngulfing - Engulfing Pattern
+/*
+CdlEngulfing - Engulfing Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlEngulfing(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -679,20 +679,20 @@ func CdlEngulfing(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlEveningDojiStar - Evening Doji Star
+/*
+CdlEveningDojiStar - Evening Doji Star
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlEveningDojiStar(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -702,20 +702,20 @@ func CdlEveningDojiStar(open, high, low, close []float64, penetration float64) [
 	return outInteger[:outNBElement]
 }
 
-/*CdlEveningStar - Evening Star
+/*
+CdlEveningStar - Evening Star
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlEveningStar(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -725,12 +725,12 @@ func CdlEveningStar(open, high, low, close []float64, penetration float64) []int
 	return outInteger[:outNBElement]
 }
 
-/*CdlGapSidesideWhite - Up/Down-gap side-by-side white lines
+/*
+CdlGapSidesideWhite - Up/Down-gap side-by-side white lines
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlGapSidesideWhite(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -740,12 +740,12 @@ func CdlGapSidesideWhite(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlGravestoneDoji - Gravestone Doji
+/*
+CdlGravestoneDoji - Gravestone Doji
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlGravestoneDoji(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -755,12 +755,12 @@ func CdlGravestoneDoji(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHammer - Hammer
+/*
+CdlHammer - Hammer
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHammer(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -770,12 +770,12 @@ func CdlHammer(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHangingMan - Hanging Man
+/*
+CdlHangingMan - Hanging Man
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHangingMan(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -785,12 +785,12 @@ func CdlHangingMan(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHarami - Harami Pattern
+/*
+CdlHarami - Harami Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHarami(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -800,12 +800,12 @@ func CdlHarami(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHaramiCross - Harami Cross Pattern
+/*
+CdlHaramiCross - Harami Cross Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHaramiCross(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -815,12 +815,12 @@ func CdlHaramiCross(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHighWave - High-Wave Candle
+/*
+CdlHighWave - High-Wave Candle
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHighWave(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -830,12 +830,12 @@ func CdlHighWave(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHikkake - Hikkake Pattern
+/*
+CdlHikkake - Hikkake Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHikkake(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -845,12 +845,12 @@ func CdlHikkake(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHikkakeMod - Modified Hikkake Pattern
+/*
+CdlHikkakeMod - Modified Hikkake Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHikkakeMod(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -860,12 +860,12 @@ func CdlHikkakeMod(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlHomingPigeon - Homing Pigeon
+/*
+CdlHomingPigeon - Homing Pigeon
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlHomingPigeon(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -875,12 +875,12 @@ func CdlHomingPigeon(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlIdentical3Crows - Identical Three Crows
+/*
+CdlIdentical3Crows - Identical Three Crows
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlIdentical3Crows(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -890,12 +890,12 @@ func CdlIdentical3Crows(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlInNeck - In-Neck Pattern
+/*
+CdlInNeck - In-Neck Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlInNeck(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -905,12 +905,12 @@ func CdlInNeck(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlInvertedHammer - Inverted Hammer
+/*
+CdlInvertedHammer - Inverted Hammer
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlInvertedHammer(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -920,12 +920,12 @@ func CdlInvertedHammer(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlKicking - Kicking
+/*
+CdlKicking - Kicking
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlKicking(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -935,12 +935,12 @@ func CdlKicking(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlKickingByLength - Kicking - bull/bear determined by the longer marubozu
+/*
+CdlKickingByLength - Kicking - bull/bear determined by the longer marubozu
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlKickingByLength(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -950,12 +950,12 @@ func CdlKickingByLength(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlLadderBottom - Ladder Bottom
+/*
+CdlLadderBottom - Ladder Bottom
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlLadderBottom(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -965,12 +965,12 @@ func CdlLadderBottom(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlLongLeggedDoji - Long Legged Doji
+/*
+CdlLongLeggedDoji - Long Legged Doji
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlLongLeggedDoji(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -980,12 +980,12 @@ func CdlLongLeggedDoji(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlLongLine - Long Line Candle
+/*
+CdlLongLine - Long Line Candle
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlLongLine(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -995,12 +995,12 @@ func CdlLongLine(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlMarubozu - Marubozu
+/*
+CdlMarubozu - Marubozu
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlMarubozu(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1010,12 +1010,12 @@ func CdlMarubozu(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlMatchingLow - Matching Low
+/*
+CdlMatchingLow - Matching Low
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlMatchingLow(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1025,20 +1025,20 @@ func CdlMatchingLow(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlMatHold - Mat Hold
+/*
+CdlMatHold - Mat Hold
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlMatHold(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -1048,20 +1048,20 @@ func CdlMatHold(open, high, low, close []float64, penetration float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlMorningDojiStar - Morning Doji Star
+/*
+CdlMorningDojiStar - Morning Doji Star
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlMorningDojiStar(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -1071,20 +1071,20 @@ func CdlMorningDojiStar(open, high, low, close []float64, penetration float64) [
 	return outInteger[:outNBElement]
 }
 
-/*CdlMorningStar - Morning Star
+/*
+CdlMorningStar - Morning Star
 
 Input = Open, High, Low, Close
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInPenetration:(From 0 to TA_REAL_MAX)
 
 Percentage of penetration of a candle within another candle
-
 */
 func CdlMorningStar(open, high, low, close []float64, penetration float64) []int32 {
 	var outBegIdx C.int
@@ -1094,12 +1094,12 @@ func CdlMorningStar(open, high, low, close []float64, penetration float64) []int
 	return outInteger[:outNBElement]
 }
 
-/*CdlOnNeck - On-Neck Pattern
+/*
+CdlOnNeck - On-Neck Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlOnNeck(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1109,12 +1109,12 @@ func CdlOnNeck(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlPiercing - Piercing Pattern
+/*
+CdlPiercing - Piercing Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlPiercing(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1124,12 +1124,12 @@ func CdlPiercing(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlRickshawMan - Rickshaw Man
+/*
+CdlRickshawMan - Rickshaw Man
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlRickshawMan(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1139,12 +1139,12 @@ func CdlRickshawMan(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlRiseFall3Methods - Rising/Falling Three Methods
+/*
+CdlRiseFall3Methods - Rising/Falling Three Methods
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlRiseFall3Methods(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1154,12 +1154,12 @@ func CdlRiseFall3Methods(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlSeparatingLines - Separating Lines
+/*
+CdlSeparatingLines - Separating Lines
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlSeparatingLines(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1169,12 +1169,12 @@ func CdlSeparatingLines(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlShootingStar - Shooting Star
+/*
+CdlShootingStar - Shooting Star
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlShootingStar(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1184,12 +1184,12 @@ func CdlShootingStar(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlShortLine - Short Line Candle
+/*
+CdlShortLine - Short Line Candle
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlShortLine(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1199,12 +1199,12 @@ func CdlShortLine(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlSpinningTop - Spinning Top
+/*
+CdlSpinningTop - Spinning Top
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlSpinningTop(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1214,12 +1214,12 @@ func CdlSpinningTop(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlStalledPattern - Stalled Pattern
+/*
+CdlStalledPattern - Stalled Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlStalledPattern(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1229,12 +1229,12 @@ func CdlStalledPattern(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlStickSandwich - Stick Sandwich
+/*
+CdlStickSandwich - Stick Sandwich
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlStickSandwich(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1244,12 +1244,12 @@ func CdlStickSandwich(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlTakuri - Takuri (Dragonfly Doji with very long lower shadow)
+/*
+CdlTakuri - Takuri (Dragonfly Doji with very long lower shadow)
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlTakuri(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1259,12 +1259,12 @@ func CdlTakuri(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlTasukiGap - Tasuki Gap
+/*
+CdlTasukiGap - Tasuki Gap
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlTasukiGap(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1274,12 +1274,12 @@ func CdlTasukiGap(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlThrusting - Thrusting Pattern
+/*
+CdlThrusting - Thrusting Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlThrusting(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1289,12 +1289,12 @@ func CdlThrusting(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlTristar - Tristar Pattern
+/*
+CdlTristar - Tristar Pattern
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlTristar(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1304,12 +1304,12 @@ func CdlTristar(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlUnique3River - Unique 3 River
+/*
+CdlUnique3River - Unique 3 River
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlUnique3River(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1319,12 +1319,12 @@ func CdlUnique3River(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlUpsideGap2Crows - Upside Gap Two Crows
+/*
+CdlUpsideGap2Crows - Upside Gap Two Crows
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlUpsideGap2Crows(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1334,12 +1334,12 @@ func CdlUpsideGap2Crows(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*CdlxSideGap3Methods - Upside/Downside Gap Three Methods
+/*
+CdlxSideGap3Methods - Upside/Downside Gap Three Methods
 
 Input = Open, High, Low, Close
 
 Output = int
-
 */
 func CdlxSideGap3Methods(open, high, low, close []float64) []int32 {
 	var outBegIdx C.int
@@ -1349,12 +1349,12 @@ func CdlxSideGap3Methods(open, high, low, close []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Ceil - Vector Ceil
+/*
+Ceil - Vector Ceil
 
 Input = double
 
 Output = double
-
 */
 func Ceil(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1364,20 +1364,20 @@ func Ceil(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Cmo - Chande Momentum Oscillator
+/*
+Cmo - Chande Momentum Oscillator
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Cmo(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1387,20 +1387,20 @@ func Cmo(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Correl - Pearson's Correlation Coefficient (r)
+/*
+Correl - Pearson's Correlation Coefficient (r)
 
 Input = double, double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Correl(real0, real1 []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1410,12 +1410,12 @@ func Correl(real0, real1 []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Cos - Vector Trigonometric Cos
+/*
+Cos - Vector Trigonometric Cos
 
 Input = double
 
 Output = double
-
 */
 func Cos(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1425,12 +1425,12 @@ func Cos(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Cosh - Vector Trigonometric Cosh
+/*
+Cosh - Vector Trigonometric Cosh
 
 Input = double
 
 Output = double
-
 */
 func Cosh(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1440,20 +1440,20 @@ func Cosh(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Dema - Double Exponential Moving Average
+/*
+Dema - Double Exponential Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Dema(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1463,12 +1463,12 @@ func Dema(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Div - Vector Arithmetic Div
+/*
+Div - Vector Arithmetic Div
 
 Input = double, double
 
 Output = double
-
 */
 func Div(real0, real1 []float64) []float64 {
 	var outBegIdx C.int
@@ -1478,20 +1478,20 @@ func Div(real0, real1 []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Dx - Directional Movement Index
+/*
+Dx - Directional Movement Index
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Dx(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1501,20 +1501,20 @@ func Dx(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Ema - Exponential Moving Average
+/*
+Ema - Exponential Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Ema(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1524,12 +1524,12 @@ func Ema(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Exp - Vector Arithmetic Exp
+/*
+Exp - Vector Arithmetic Exp
 
 Input = double
 
 Output = double
-
 */
 func Exp(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1539,12 +1539,12 @@ func Exp(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Floor - Vector Floor
+/*
+Floor - Vector Floor
 
 Input = double
 
 Output = double
-
 */
 func Floor(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1554,12 +1554,12 @@ func Floor(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*HtDcPeriod - Hilbert Transform - Dominant Cycle Period
+/*
+HtDcPeriod - Hilbert Transform - Dominant Cycle Period
 
 Input = double
 
 Output = double
-
 */
 func HtDcPeriod(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1569,12 +1569,12 @@ func HtDcPeriod(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*HtDcPhase - Hilbert Transform - Dominant Cycle Phase
+/*
+HtDcPhase - Hilbert Transform - Dominant Cycle Phase
 
 Input = double
 
 Output = double
-
 */
 func HtDcPhase(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1584,12 +1584,12 @@ func HtDcPhase(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*HtPhasor - Hilbert Transform - Phasor Components
+/*
+HtPhasor - Hilbert Transform - Phasor Components
 
 Input = double
 
 Output = double, double
-
 */
 func HtPhasor(real []float64) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -1600,12 +1600,12 @@ func HtPhasor(real []float64) ([]float64, []float64) {
 	return outInPhase[:outNBElement], outQuadrature[:outNBElement]
 }
 
-/*HtSine - Hilbert Transform - SineWave
+/*
+HtSine - Hilbert Transform - SineWave
 
 Input = double
 
 Output = double, double
-
 */
 func HtSine(real []float64) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -1616,12 +1616,12 @@ func HtSine(real []float64) ([]float64, []float64) {
 	return outSine[:outNBElement], outLeadSine[:outNBElement]
 }
 
-/*HtTrendLine - Hilbert Transform - Instantaneous Trendline
+/*
+HtTrendLine - Hilbert Transform - Instantaneous Trendline
 
 Input = double
 
 Output = double
-
 */
 func HtTrendLine(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1631,12 +1631,12 @@ func HtTrendLine(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*HtTrendMode - Hilbert Transform - Trend vs Cycle Mode
+/*
+HtTrendMode - Hilbert Transform - Trend vs Cycle Mode
 
 Input = double
 
 Output = int
-
 */
 func HtTrendMode(real []float64) []int32 {
 	var outBegIdx C.int
@@ -1646,20 +1646,20 @@ func HtTrendMode(real []float64) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*Kama - Kaufman Adaptive Moving Average
+/*
+Kama - Kaufman Adaptive Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Kama(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1669,20 +1669,20 @@ func Kama(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*LinearReg - Linear Regression
+/*
+LinearReg - Linear Regression
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func LinearReg(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1692,20 +1692,20 @@ func LinearReg(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*LinearRegAngle - Linear Regression Angle
+/*
+LinearRegAngle - Linear Regression Angle
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func LinearRegAngle(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1715,20 +1715,20 @@ func LinearRegAngle(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*LinearRegIntercept - Linear Regression Intercept
+/*
+LinearRegIntercept - Linear Regression Intercept
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func LinearRegIntercept(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1738,20 +1738,20 @@ func LinearRegIntercept(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*LinearRegSlope - Linear Regression Slope
+/*
+LinearRegSlope - Linear Regression Slope
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func LinearRegSlope(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -1761,12 +1761,12 @@ func LinearRegSlope(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Ln - Vector Log Natural
+/*
+Ln - Vector Log Natural
 
 Input = double
 
 Output = double
-
 */
 func Ln(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1776,12 +1776,12 @@ func Ln(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Log10 - Vector Log10
+/*
+Log10 - Vector Log10
 
 Input = double
 
 Output = double
-
 */
 func Log10(real []float64) []float64 {
 	var outBegIdx C.int
@@ -1791,24 +1791,24 @@ func Log10(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Ma - Moving average
+/*
+Ma - Moving average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
-Number of period
+# Number of period
 
 optInMaType:
 
 Type of Moving Average
-
 */
 func Ma(real []float64, timePeriod, mAType int32) []float64 {
 	var outBegIdx C.int
@@ -1818,28 +1818,28 @@ func Ma(real []float64, timePeriod, mAType int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Macd - Moving Average Convergence/Divergence
+/*
+Macd - Moving Average Convergence/Divergence
 
 Input = double
 
 Output = double, double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastPeriod:(From 2 to 100000)
 
-Number of period for the fast MA
+# Number of period for the fast MA
 
 optInSlowPeriod:(From 2 to 100000)
 
-Number of period for the slow MA
+# Number of period for the slow MA
 
 optInSignalPeriod:(From 1 to 100000)
 
 Smoothing for the signal line (nb of period)
-
 */
 func Macd(real []float64, fastPeriod, slowPeriod, signalPeriod int32) ([]float64, []float64, []float64) {
 	var outBegIdx C.int
@@ -1851,31 +1851,32 @@ func Macd(real []float64, fastPeriod, slowPeriod, signalPeriod int32) ([]float64
 	return outMACD[:outNBElement], outMACDSignal[:outNBElement], outMACDHist[:outNBElement]
 }
 
-/*MacdExt - MACD with controllable MA type
+/*
+MacdExt - MACD with controllable MA type
 
 Input = double
 
 Output = double, double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastPeriod:(From 2 to 100000)
 
-Number of period for the fast MA
+# Number of period for the fast MA
 
 optInFastMAType:
 
-Type of Moving Average for fast MA
+# Type of Moving Average for fast MA
 
 optInSlowPeriod:(From 2 to 100000)
 
-Number of period for the slow MA
+# Number of period for the slow MA
 
 optInSlowMAType:
 
-Type of Moving Average for slow MA
+# Type of Moving Average for slow MA
 
 optInSignalPeriod:(From 1 to 100000)
 
@@ -1884,7 +1885,6 @@ Smoothing for the signal line (nb of period)
 optInSignalMAType:
 
 Type of Moving Average for signal line
-
 */
 func MacdExt(real []float64, fastPeriod, fastMAType, slowPeriod, slowMAType, signalPeriod, signalMAType int32) ([]float64, []float64, []float64) {
 	var outBegIdx C.int
@@ -1896,20 +1896,20 @@ func MacdExt(real []float64, fastPeriod, fastMAType, slowPeriod, slowMAType, sig
 	return outMACD[:outNBElement], outMACDSignal[:outNBElement], outMACDHist[:outNBElement]
 }
 
-/*MacdFix - Moving Average Convergence/Divergence Fix 12/26
+/*
+MacdFix - Moving Average Convergence/Divergence Fix 12/26
 
 Input = double
 
 Output = double, double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInSignalPeriod:(From 1 to 100000)
 
 Smoothing for the signal line (nb of period)
-
 */
 func MacdFix(real []float64, signalPeriod int32) ([]float64, []float64, []float64) {
 	var outBegIdx C.int
@@ -1921,24 +1921,24 @@ func MacdFix(real []float64, signalPeriod int32) ([]float64, []float64, []float6
 	return outMACD[:outNBElement], outMACDSignal[:outNBElement], outMACDHist[:outNBElement]
 }
 
-/*Mama - MESA Adaptive Moving Average
+/*
+Mama - MESA Adaptive Moving Average
 
 Input = double
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastLimit:(From 0.01 to 0.99)
 
-Upper limit use in the adaptive algorithm
+# Upper limit use in the adaptive algorithm
 
 optInSlowLimit:(From 0.01 to 0.99)
 
 Lower limit use in the adaptive algorithm
-
 */
 func Mama(real []float64, fastLimit, slowLimit float64) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -1949,28 +1949,28 @@ func Mama(real []float64, fastLimit, slowLimit float64) ([]float64, []float64) {
 	return outMAMA[:outNBElement], outFAMA[:outNBElement]
 }
 
-/*Mavp - Moving average with variable period
+/*
+Mavp - Moving average with variable period
 
 Input = double, double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInMinPeriod:(From 2 to 100000)
 
-Value less than minimum will be changed to Minimum period
+# Value less than minimum will be changed to Minimum period
 
 optInMaxPeriod:(From 2 to 100000)
 
-Value higher than maximum will be changed to Maximum period
+# Value higher than maximum will be changed to Maximum period
 
 optInMAType:
 
 Type of Moving Average
-
 */
 func Mavp(real, periods []float64, minPeriod, maxPeriod, mAType int32) []float64 {
 	var outBegIdx C.int
@@ -1980,20 +1980,20 @@ func Mavp(real, periods []float64, minPeriod, maxPeriod, mAType int32) []float64
 	return outReal[:outNBElement]
 }
 
-/*Max - Highest value over a specified period
+/*
+Max - Highest value over a specified period
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Max(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2003,20 +2003,20 @@ func Max(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*MaxIndex - Index of highest value over a specified period
+/*
+MaxIndex - Index of highest value over a specified period
 
 Input = double
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MaxIndex(real []float64, timePeriod int32) []int32 {
 	var outBegIdx C.int
@@ -2026,12 +2026,12 @@ func MaxIndex(real []float64, timePeriod int32) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*MedPrice - Median Price
+/*
+MedPrice - Median Price
 
 Input = High, Low
 
 Output = double
-
 */
 func MedPrice(high, low []float64) []float64 {
 	var outBegIdx C.int
@@ -2041,20 +2041,20 @@ func MedPrice(high, low []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Mfi - Money Flow Index
+/*
+Mfi - Money Flow Index
 
 Input = High, Low, Close, Volume
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Mfi(high, low, close, volume []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2064,20 +2064,20 @@ func Mfi(high, low, close, volume []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*MidPoint - MidPoint over period
+/*
+MidPoint - MidPoint over period
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MidPoint(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2087,20 +2087,20 @@ func MidPoint(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*MidPrice - Midpoint Price over period
+/*
+MidPrice - Midpoint Price over period
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MidPrice(high, low []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2110,20 +2110,20 @@ func MidPrice(high, low []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Min - Lowest value over a specified period
+/*
+Min - Lowest value over a specified period
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Min(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2133,20 +2133,20 @@ func Min(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*MinIndex - Index of lowest value over a specified period
+/*
+MinIndex - Index of lowest value over a specified period
 
 Input = double
 
 Output = int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MinIndex(real []float64, timePeriod int32) []int32 {
 	var outBegIdx C.int
@@ -2156,20 +2156,20 @@ func MinIndex(real []float64, timePeriod int32) []int32 {
 	return outInteger[:outNBElement]
 }
 
-/*MinMax - Lowest and highest values over a specified period
+/*
+MinMax - Lowest and highest values over a specified period
 
 Input = double
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MinMax(real []float64, timePeriod int32) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -2180,20 +2180,20 @@ func MinMax(real []float64, timePeriod int32) ([]float64, []float64) {
 	return outMin[:outNBElement], outMax[:outNBElement]
 }
 
-/*MinMaxIndex - Indexes of lowest and highest values over a specified period
+/*
+MinMaxIndex - Indexes of lowest and highest values over a specified period
 
 Input = double
 
 Output = int, int
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func MinMaxIndex(real []float64, timePeriod int32) ([]int32, []int32) {
 	var outBegIdx C.int
@@ -2204,20 +2204,20 @@ func MinMaxIndex(real []float64, timePeriod int32) ([]int32, []int32) {
 	return outMinIdx[:outNBElement], outMaxIdx[:outNBElement]
 }
 
-/*MinusDi - Minus Directional Indicator
+/*
+MinusDi - Minus Directional Indicator
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func MinusDi(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2227,20 +2227,20 @@ func MinusDi(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*MinusDm - Minus Directional Movement
+/*
+MinusDm - Minus Directional Movement
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func MinusDm(high, low []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2250,20 +2250,20 @@ func MinusDm(high, low []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Mom - Momentum
+/*
+Mom - Momentum
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Mom(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2273,12 +2273,12 @@ func Mom(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Mult - Vector Arithmetic Mult
+/*
+Mult - Vector Arithmetic Mult
 
 Input = double, double
 
 Output = double
-
 */
 func Mult(real0, real1 []float64) []float64 {
 	var outBegIdx C.int
@@ -2288,20 +2288,20 @@ func Mult(real0, real1 []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Natr - Normalized Average True Range
+/*
+Natr - Normalized Average True Range
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Natr(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2311,12 +2311,12 @@ func Natr(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Obv - On Balance Volume
+/*
+Obv - On Balance Volume
 
 Input = double, Volume
 
 Output = double
-
 */
 func Obv(real, volume []float64) []float64 {
 	var outBegIdx C.int
@@ -2326,20 +2326,20 @@ func Obv(real, volume []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*PlusDi - Plus Directional Indicator
+/*
+PlusDi - Plus Directional Indicator
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func PlusDi(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2349,20 +2349,20 @@ func PlusDi(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*PlusDm - Plus Directional Movement
+/*
+PlusDm - Plus Directional Movement
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func PlusDm(high, low []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2372,28 +2372,28 @@ func PlusDm(high, low []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Ppo - Percentage Price Oscillator
+/*
+Ppo - Percentage Price Oscillator
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastPeriod:(From 2 to 100000)
 
-Number of period for the fast MA
+# Number of period for the fast MA
 
 optInSlowPeriod:(From 2 to 100000)
 
-Number of period for the slow MA
+# Number of period for the slow MA
 
 optInMAType:
 
 Type of Moving Average
-
 */
 func Ppo(real []float64, fastPeriod, slowPeriod, mAType int32) []float64 {
 	var outBegIdx C.int
@@ -2403,20 +2403,20 @@ func Ppo(real []float64, fastPeriod, slowPeriod, mAType int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Roc - Rate of change : ((price/prevPrice)-1)*100
+/*
+Roc - Rate of change : ((price/prevPrice)-1)*100
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Roc(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2426,20 +2426,20 @@ func Roc(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Rocp - Rate of change Percentage: (price-prevPrice)/prevPrice
+/*
+Rocp - Rate of change Percentage: (price-prevPrice)/prevPrice
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Rocp(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2449,20 +2449,20 @@ func Rocp(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Rocr - Rate of change ratio: (price/prevPrice)
+/*
+Rocr - Rate of change ratio: (price/prevPrice)
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Rocr(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2472,20 +2472,20 @@ func Rocr(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Rocr100 - Rate of change ratio 100 scale: (price/prevPrice)*100
+/*
+Rocr100 - Rate of change ratio 100 scale: (price/prevPrice)*100
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Rocr100(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2495,20 +2495,20 @@ func Rocr100(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Rsi - Relative Strength Index
+/*
+Rsi - Relative Strength Index
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Rsi(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2518,24 +2518,24 @@ func Rsi(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Sar - Parabolic Sar
+/*
+Sar - Parabolic Sar
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInAcceleration:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor used up to the Maximum value
+# Acceleration Factor used up to the Maximum value
 
 optInMaximum:(From 0 to TA_REAL_MAX)
 
 Acceleration Factor Maximum value
-
 */
 func Sar(high, low []float64, acceleration, maximum float64) []float64 {
 	var outBegIdx C.int
@@ -2545,13 +2545,14 @@ func Sar(high, low []float64, acceleration, maximum float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*SarExt - Parabolic SAR - Extended
+/*
+SarExt - Parabolic SAR - Extended
 
 Input = High, Low
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
@@ -2565,28 +2566,27 @@ Percent offset added/removed to initial stop on short/long reversal
 
 optInAccelerationInitLong:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor initial value for the Long direction
+# Acceleration Factor initial value for the Long direction
 
 optInAccelerationLong:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor for the Long direction
+# Acceleration Factor for the Long direction
 
 optInAccelerationMaxLong:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor maximum value for the Long direction
+# Acceleration Factor maximum value for the Long direction
 
 optInAccelerationInitShort:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor initial value for the Short direction
+# Acceleration Factor initial value for the Short direction
 
 optInAccelerationShort:(From 0 to TA_REAL_MAX)
 
-Acceleration Factor for the Short direction
+# Acceleration Factor for the Short direction
 
 optInAccelerationMaxShort:(From 0 to TA_REAL_MAX)
 
 Acceleration Factor maximum value for the Short direction
-
 */
 func SarExt(high, low []float64, startValue, offsetOnReverse, accelerationInitLong, accelerationLong, accelerationMaxLong, accelerationInitShort, accelerationShort, accelerationMaxShort float64) []float64 {
 	var outBegIdx C.int
@@ -2596,12 +2596,12 @@ func SarExt(high, low []float64, startValue, offsetOnReverse, accelerationInitLo
 	return outReal[:outNBElement]
 }
 
-/*Sin - Vector Trigonometric Sin
+/*
+Sin - Vector Trigonometric Sin
 
 Input = double
 
 Output = double
-
 */
 func Sin(real []float64) []float64 {
 	var outBegIdx C.int
@@ -2611,12 +2611,12 @@ func Sin(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Sinh - Vector Trigonometric Sinh
+/*
+Sinh - Vector Trigonometric Sinh
 
 Input = double
 
 Output = double
-
 */
 func Sinh(real []float64) []float64 {
 	var outBegIdx C.int
@@ -2626,20 +2626,20 @@ func Sinh(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Sma - Simple Moving Average
+/*
+Sma - Simple Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Sma(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2649,12 +2649,12 @@ func Sma(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Sqrt - Vector Square Root
+/*
+Sqrt - Vector Square Root
 
 Input = double
 
 Output = double
-
 */
 func Sqrt(real []float64) []float64 {
 	var outBegIdx C.int
@@ -2664,24 +2664,24 @@ func Sqrt(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*StdDev - Standard Deviation
+/*
+StdDev - Standard Deviation
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
-Number of period
+# Number of period
 
 optInNbDev:(From TA_REAL_MIN to TA_REAL_MAX)
 
 Nb of deviations
-
 */
 func StdDev(real []float64, timePeriod int32, nbDev float64) []float64 {
 	var outBegIdx C.int
@@ -2691,19 +2691,20 @@ func StdDev(real []float64, timePeriod int32, nbDev float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Stoch - Stochastic
+/*
+Stoch - Stochastic
 
 Input = High, Low, Close
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastK_Period:(From 1 to 100000)
 
-Time period for building the Fast-K line
+# Time period for building the Fast-K line
 
 optInSlowK_Period:(From 1 to 100000)
 
@@ -2711,16 +2712,15 @@ Smoothing for making the Slow-K line. Usually set to 3
 
 optInSlowK_MAType:
 
-Type of Moving Average for Slow-K
+# Type of Moving Average for Slow-K
 
 optInSlowD_Period:(From 1 to 100000)
 
-Smoothing for making the Slow-D line
+# Smoothing for making the Slow-D line
 
 optInSlowD_MAType:
 
 Type of Moving Average for Slow-D
-
 */
 func Stoch(high, low, close []float64, fastKPeriod, slowKPeriod, slowKMAType, slowDPeriod, slowDMAType int32) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -2731,19 +2731,20 @@ func Stoch(high, low, close []float64, fastKPeriod, slowKPeriod, slowKMAType, sl
 	return outSlowK[:outNBElement], outSlowD[:outNBElement]
 }
 
-/*Stochf - Stochastic Fast
+/*
+Stochf - Stochastic Fast
 
 Input = High, Low, Close
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInFastK_Period:(From 1 to 100000)
 
-Time period for building the Fast-K line
+# Time period for building the Fast-K line
 
 optInFastD_Period:(From 1 to 100000)
 
@@ -2752,7 +2753,6 @@ Smoothing for making the Fast-D line. Usually set to 3
 optInFastD_MAType:
 
 Type of Moving Average for Fast-D
-
 */
 func Stochf(high, low, close []float64, fastKPeriod, fastDPeriod, fastDMAType int32) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -2763,23 +2763,24 @@ func Stochf(high, low, close []float64, fastKPeriod, fastDPeriod, fastDMAType in
 	return outFastK[:outNBElement], outFastD[:outNBElement]
 }
 
-/*StochRsi - Stochastic Relative Strength Index
+/*
+StochRsi - Stochastic Relative Strength Index
 
 Input = double
 
 Output = double, double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
-Number of period
+# Number of period
 
 optInFastK_Period:(From 1 to 100000)
 
-Time period for building the Fast-K line
+# Time period for building the Fast-K line
 
 optInFastD_Period:(From 1 to 100000)
 
@@ -2788,7 +2789,6 @@ Smoothing for making the Fast-D line. Usually set to 3
 optInFastD_MAType:
 
 Type of Moving Average for Fast-D
-
 */
 func StochRsi(real []float64, timePeriod, fastKPeriod, fastDPeriod, fastDMAType int32) ([]float64, []float64) {
 	var outBegIdx C.int
@@ -2799,12 +2799,12 @@ func StochRsi(real []float64, timePeriod, fastKPeriod, fastDPeriod, fastDMAType 
 	return outFastK[:outNBElement], outFastD[:outNBElement]
 }
 
-/*Sub - Vector Arithmetic Substraction
+/*
+Sub - Vector Arithmetic Substraction
 
 Input = double, double
 
 Output = double
-
 */
 func Sub(real0, real1 []float64) []float64 {
 	var outBegIdx C.int
@@ -2814,20 +2814,20 @@ func Sub(real0, real1 []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Sum - Summation
+/*
+Sum - Summation
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Sum(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2837,24 +2837,24 @@ func Sum(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*T3 - Triple Exponential Moving Average (T3)
+/*
+T3 - Triple Exponential Moving Average (T3)
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
-Number of period
+# Number of period
 
 optInVFactor:(From 0 to 1)
 
 Volume Factor
-
 */
 func T3(real []float64, timePeriod int32, vFactor float64) []float64 {
 	var outBegIdx C.int
@@ -2864,12 +2864,12 @@ func T3(real []float64, timePeriod int32, vFactor float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Tan - Vector Trigonometric Tan
+/*
+Tan - Vector Trigonometric Tan
 
 Input = double
 
 Output = double
-
 */
 func Tan(real []float64) []float64 {
 	var outBegIdx C.int
@@ -2879,12 +2879,12 @@ func Tan(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Tanh - Vector Trigonometric Tanh
+/*
+Tanh - Vector Trigonometric Tanh
 
 Input = double
 
 Output = double
-
 */
 func Tanh(real []float64) []float64 {
 	var outBegIdx C.int
@@ -2894,20 +2894,20 @@ func Tanh(real []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Tema - Triple Exponential Moving Average
+/*
+Tema - Triple Exponential Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Tema(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2917,12 +2917,12 @@ func Tema(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Trange - True Range
+/*
+Trange - True Range
 
 Input = High, Low, Close
 
 Output = double
-
 */
 func Trange(high, low, close []float64) []float64 {
 	var outBegIdx C.int
@@ -2932,20 +2932,20 @@ func Trange(high, low, close []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*TriMa - Triangular Moving Average
+/*
+TriMa - Triangular Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func TriMa(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2955,20 +2955,20 @@ func TriMa(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Trix - 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
+/*
+Trix - 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
 Number of period
-
 */
 func Trix(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -2978,20 +2978,20 @@ func Trix(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Tsf - Time Series Forecast
+/*
+Tsf - Time Series Forecast
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Tsf(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -3001,12 +3001,12 @@ func Tsf(real []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*TypPrice - Typical Price
+/*
+TypPrice - Typical Price
 
 Input = High, Low, Close
 
 Output = double
-
 */
 func TypPrice(high, low, close []float64) []float64 {
 	var outBegIdx C.int
@@ -3016,13 +3016,14 @@ func TypPrice(high, low, close []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*UltOsc - Ultimate Oscillator
+/*
+UltOsc - Ultimate Oscillator
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
@@ -3032,12 +3033,11 @@ Number of bars for 1st period.
 
 optInTimePeriod2:(From 1 to 100000)
 
-Number of bars fro 2nd period
+# Number of bars fro 2nd period
 
 optInTimePeriod3:(From 1 to 100000)
 
 Number of bars for 3rd period
-
 */
 func UltOsc(high, low, close []float64, timePeriod1, timePeriod2, timePeriod3 int32) []float64 {
 	var outBegIdx C.int
@@ -3047,24 +3047,24 @@ func UltOsc(high, low, close []float64, timePeriod1, timePeriod2, timePeriod3 in
 	return outReal[:outNBElement]
 }
 
-/*Var - Variance
+/*
+Var - Variance
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 1 to 100000)
 
-Number of period
+# Number of period
 
 optInNbDev:(From TA_REAL_MIN to TA_REAL_MAX)
 
 Nb of deviations
-
 */
 func Var(real []float64, timePeriod int32, nbDev float64) []float64 {
 	var outBegIdx C.int
@@ -3074,12 +3074,12 @@ func Var(real []float64, timePeriod int32, nbDev float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*WclPrice - Weighted Close Price
+/*
+WclPrice - Weighted Close Price
 
 Input = High, Low, Close
 
 Output = double
-
 */
 func WclPrice(high, low, close []float64) []float64 {
 	var outBegIdx C.int
@@ -3089,20 +3089,20 @@ func WclPrice(high, low, close []float64) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Willr - Williams' %R
+/*
+Willr - Williams' %R
 
 Input = High, Low, Close
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Willr(high, low, close []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
@@ -3112,20 +3112,20 @@ func Willr(high, low, close []float64, timePeriod int32) []float64 {
 	return outReal[:outNBElement]
 }
 
-/*Wma - Weighted Moving Average
+/*
+Wma - Weighted Moving Average
 
 Input = double
 
 Output = double
 
-Optional Parameters
+# Optional Parameters
 
 -------------------
 
 optInTimePeriod:(From 2 to 100000)
 
 Number of period
-
 */
 func Wma(real []float64, timePeriod int32) []float64 {
 	var outBegIdx C.int
